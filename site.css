@@ -8,7 +8,7 @@
   --muted: #465d53;
   --line: #e1e5dc;
   --gold-text: #745622;
-  --dock: 84px;
+  --dock: 76px;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -137,10 +137,23 @@ figcaption { color: var(--muted); margin: 8px 0; font-size: .86rem; }
     grid-auto-rows: 1fr; gap: clamp(5px, 1.2vw, 10px);
     inset-inline: max(10px, env(safe-area-inset-left)) max(10px, env(safe-area-inset-right));
     bottom: calc(10px + env(safe-area-inset-bottom));
+    padding: 5px;
+    border-radius: 16px;
+    background: rgb(250 249 245 / 78%);
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
   }
   .mobile-nav a {
-    min-height: 54px; padding: 6px 4px;
+    min-height: 44px; padding: 3px;
+    border: 3px solid var(--forest);
+    border-radius: 12px;
+    background: rgb(255 255 255 / 86%);
+    box-shadow: 0 2px 6px #06291f1a;
     font-size: clamp(.69rem, 2vw, .88rem);
+  }
+  .mobile-nav a:hover, .mobile-nav a[aria-current] {
+    border-color: var(--forest);
+    background: #dcebe1;
   }
   .floating-rail {
     right: max(10px, env(safe-area-inset-right));
