@@ -13,8 +13,9 @@ ORIGIN = CONFIG['website']
 PHONE = CONFIG['phone']
 BRAND = 'GulfPath Overseas'
 TAGLINE = 'Your Pathway to Gulf Careers'
-LANG = {'en': 'English', 'ne': 'नेपाली', 'ta': 'தமிழ்', 'si': 'සිංහල', 'hi': 'हिन्दी'}
-LOCALE = dict(en='en_US', ne='ne_NP', ta='ta_LK', si='si_LK', hi='hi_IN')
+DEFAULT_LANG = 'en'
+LANG = {'en': 'English', 'ne': 'नेपाली', 'ta': 'தமிழ்', 'si': 'සිංහල', 'hi': 'हिन्दी', 'ml': 'മലയാളം'}
+LOCALE = dict(en='en_US', ne='ne_NP', ta='ta_LK', si='si_LK', hi='hi_IN', ml='ml_IN')
 COPY = json.loads((SOURCE / 'base.json').read_text())
 for row in (SOURCE / 'copy.txt').read_text().splitlines():
     key, *values = row.split('|')
@@ -146,11 +147,19 @@ class Page:
           <p>{anchor(ORIGIN, ORIGIN.removeprefix("https://"))}</p>{schedule}</div>
           <div class="actions">{links}{anchor(self.privacy, t['privacy'])}</div></div>''')
 
+    def salary_notice(self):
+        labels = {
+            'en': 'Monthly salary: LKR 170,000',
+            'ta': 'மாதச் சம்பளம்: 170,000 இலங்கை ரூபாய்',
+        }
+        label = labels.get(self.lang)
+        return f'<p class="salary-notice"><strong>{h(label)}</strong></p>' if label else ''
+
     def home_content(self):
         t = self.t
         return f'''<section class="hero" id="home"><div class="wrap hero-grid">
           <div><p class="eyebrow">{h(t['omanBadge'])}</p><h1>{h(t['hero'])}</h1>
-          <p class="intro">{h(t['lead'])}</p><div class="actions">{self.wa(t['hero'])}
+          <p class="intro">{h(t['lead'])}</p>{self.salary_notice()}<div class="actions">{self.wa(t['hero'])}
           {anchor(route(self.lang, 'jobs'), t['jobs'], ' class="cta secondary"')}</div>
           <p class="hero-disclosure">{h(t['footer'])} {anchor(self.privacy, t['privacy'])}</p></div>
           <figure class="hero-media"><figcaption id="video-caption">{h(t['videoNote'])}</figcaption>
@@ -213,7 +222,7 @@ class Page:
                 + section('vacancies', t['jobs'], self.vacancy_cards())
                 + section('eligibility', t['eligibility'], paragraph(t['eligText'])
                           + self.wa(t['eligibility'], t['eligibility'] + ' · WhatsApp'))
-                + section('salary', t['salary'], paragraph(t['salaryText'])
+                + section('salary', t['salary'], self.salary_notice() + paragraph(t['salaryText'])
                           + self.wa(t['salary'], t['salary'] + ' · WhatsApp'))
                 + section('documents', t['documents'], paragraph(t['docsText'])
                           + f'<fieldset class="checklist"><legend>{h(t["documents"])}</legend>{checks}</fieldset>')
@@ -244,7 +253,7 @@ class Page:
             return '<meta name="robots" content="noindex,follow">'
         url = ORIGIN + route(self.lang, self.kind)
         options = {code: ORIGIN + route(code, self.kind) for code in LANG}
-        options['x-default'] = options['ne']
+        options['x-default'] = options[DEFAULT_LANG]
         alternates = ''.join(f'<link rel="alternate" hreflang="{code}" href="{link}">'
                              for code, link in options.items())
         image = ORIGIN + '/social-preview.jpg'
@@ -357,15 +366,15 @@ def build():
             entry = ET.SubElement(sitemap, f'{{{sitemap_ns}}}url')
             ET.SubElement(entry, f'{{{sitemap_ns}}}loc').text = ORIGIN + path
             for code in (*LANG, 'x-default'):
-                target = 'ne' if code == 'x-default' else code
+                target = DEFAULT_LANG if code == 'x-default' else code
                 ET.SubElement(entry, f'{{{html_ns}}}link', rel='alternate', hreflang=code,
                               href=ORIGIN + route(target, kind))
     ET.indent(sitemap)
     write('sitemap.xml', ET.tostring(sitemap, encoding='unicode', xml_declaration=True) + '\n')
     write('robots.txt', f'User-agent: *\nAllow: /\n\nSitemap: {ORIGIN}/sitemap.xml\n')
-    write('index.html', Page('ne', '').render('home'))
-    write('privacy.html', Page('ne', 'privacy').render('privacy'))
-    write('404.html', Page('ne', '404').render())
+    write('index.html', Page(DEFAULT_LANG, '').render('home'))
+    write('privacy.html', Page(DEFAULT_LANG, 'privacy').render('privacy'))
+    write('404.html', Page(DEFAULT_LANG, '404').render())
 
 
 if __name__ == '__main__':

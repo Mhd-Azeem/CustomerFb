@@ -1,4 +1,4 @@
-const languages = new Set(['ne', 'en', 'ta', 'si', 'hi']);
+const languages = new Set(['en', 'ne', 'ta', 'si', 'hi', 'ml']);
 const storageKey = 'gulfpath-language';
 
 function readLanguage() {
@@ -24,7 +24,7 @@ if (alias) {
   const current = new URL(location.href);
   const requested = current.searchParams.get('lang');
   const language = requested ?? readLanguage();
-  if (languages.has(language) && (language !== 'ne' || requested === 'ne')) {
+  if (languages.has(language) && (language !== document.documentElement.lang || requested === language)) {
     const page = alias === 'privacy' ? 'privacy/' : '';
     const next = new URL('/' + language + '/' + page, current);
     current.searchParams.delete('lang');
