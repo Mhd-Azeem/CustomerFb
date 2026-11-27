@@ -24,14 +24,6 @@ for row in (SOURCE / 'copy.txt').read_text().splitlines():
 ICON = (SOURCE / 'whatsapp.svg').read_text().strip()
 PAGES = {'': 'home', 'about': 'about', 'jobs': 'jobs', 'privacy': 'privacy'}
 FLAGS = ('🇴🇲', '🇦🇪', '🇸🇦', '🇶🇦', '🇰🇼', '🇧🇭')
-AGENCY_LINKS = (
-    ('Sri Lanka · SLBFE', 'https://applications.slbfe.lk/feb/la/la_main.asp?LID=1'),
-    ('Nepal · Department of Foreign Employment', 'https://foreignjob.dofe.gov.np/'),
-)
-REPORT_LINKS = (
-    ('Sri Lanka · SLBFE', 'https://www.slbfe.lk/complaint-management/'),
-    ('Nepal · Department of Foreign Employment (complaint@dofe.gov.np)', 'mailto:complaint@dofe.gov.np'),
-)
 
 
 def route(lang, page=''):
@@ -157,9 +149,9 @@ class Page:
     def home_content(self):
         t = self.t
         return f'''<section class="hero" id="home"><div class="wrap hero-grid">
-          <div><p class="eyebrow">{h(t['eyebrow'])}</p><h1>{h(t['hero'])}</h1>
-          <p class="intro">{h(t['lead'])}</p><div class="actions">{self.wa(t['employment'])}
-          {anchor('#process', t['process'], ' class="cta secondary"')}</div>
+          <div><p class="eyebrow">{h(t['omanBadge'])}</p><h1>{h(t['hero'])}</h1>
+          <p class="intro">{h(t['lead'])}</p><div class="actions">{self.wa(t['hero'])}
+          {anchor(route(self.lang, 'jobs'), t['jobs'], ' class="cta secondary"')}</div>
           <p class="hero-disclosure">{h(t['footer'])} {anchor(self.privacy, t['privacy'])}</p></div>
           <figure class="hero-media"><figcaption id="video-caption">{h(t['videoNote'])}</figcaption>
           <div class="video-frame"><video id="promo" aria-labelledby="video-caption" controls
@@ -177,9 +169,9 @@ class Page:
                         for key in ('role', 'agency', 'conditions', 'expectations'))
         return (self.heading('about', 'mission')
                 + section('role', t['trustTitle'], f'<div class="trust-grid">{trust}</div>')
-                + section('verification', t['agency'], paragraph(t['verify']) + official_links(AGENCY_LINKS)
+                + section('verification', t['agency'], paragraph(t['verify'])
                           + self.wa(t['agency'], t['agency'] + ' · WhatsApp'))
-                + section('fraud', t['fraud'], paragraph(t['fraudText']) + official_links(REPORT_LINKS))
+                + section('fraud', t['fraud'], paragraph(t['fraudText']))
                 + self.contact())
 
     def vacancy_cards(self):
@@ -296,7 +288,7 @@ class Page:
             '404': ('missing', 'missingText', self.missing_content),
         }[self.kind]
         title, desc = f'{t[heading]} | {BRAND}', t[summary]
-        topic = t['privacyMessage'] if self.kind == 'privacy' else t['employment']
+        topic = {'privacy': t['privacyMessage'], '': t['hero']}.get(self.kind, t['employment'])
         validator_note = ('<!-- [html-validate-disable no-multiple-main, unique-landmark] -->'
                           if self.kind == '404' else '')
         return f'''<!DOCTYPE html>
