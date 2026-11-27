@@ -21,15 +21,7 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Prepare site files
-        run: |
-          mkdir public
-          cp index.html privacy.html site.css site.js translations.js \
-            logo.webp poster.jpg oman-video.mp4 favicon.png social-preview.jpg \
-            CNAME robots.txt sitemap.xml public/
-          for verification in google*.html; do
-            [ -f "$verification" ] || continue
-            cp "$verification" public/
-          done
+        run: sh source/package.sh
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
