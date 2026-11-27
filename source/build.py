@@ -1,6 +1,7 @@
 """Render the checked-in static website. Run from any directory with Python 3."""
 from datetime import date
 from html import escape as h
+from hashlib import sha256
 import json
 from pathlib import Path
 from urllib.parse import quote
@@ -8,6 +9,7 @@ import xml.etree.ElementTree as ET
 
 SOURCE = Path(__file__).resolve().parent
 ROOT = SOURCE.parent
+CSS_VERSION = sha256((ROOT / 'site.css').read_bytes()).hexdigest()[:12]
 CONFIG = json.loads((SOURCE / 'settings.json').read_text())
 ORIGIN = CONFIG['website']
 PHONE = CONFIG['phone']
@@ -311,7 +313,7 @@ class Page:
 <meta name="description" content="{h(desc, quote=True)}">
 {self.metadata(title, desc)}
 <link rel="icon" href="/favicon.png" type="image/png">
-<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/site.css?v={CSS_VERSION}">
 <script defer src="/site.js"></script>
 </head>
 <body data-alias="{alias}">
