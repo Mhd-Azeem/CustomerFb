@@ -1,166 +1,97 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="ne">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-<meta content="#073c2e" name="theme-color"/>
-<meta content="GulfPath Overseas — household work information and WhatsApp contact." name="description"/>
-<title>GulfPath Overseas | Oman Job Opportunities</title>
-<style>
-:root{--forest:#073f30;--deep:#06291f;--leaf:#106e4e;--mint:#e7f6ef;--gold:#bd923b;--cream:#f8faf5;--ink:#153b2f;--muted:#65796f;--border:#dce9e0;--wa:#1ca758}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{margin:0;background:linear-gradient(135deg,#eef7f0 0%,#f9faf6 46%,#f5f7ee 100%);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,"Noto Sans Tamil","Noto Sans Sinhala","Noto Sans Devanagari",sans-serif;color:var(--ink);line-height:1.4}
-img,video,svg{display:block;max-width:100%}
-a,button{font:inherit}
-button{cursor:pointer}
-:focus-visible{outline:3px solid #d1a64f;outline-offset:3px}
-.shell{max-width:1200px;margin:24px auto 48px;background:white;border:1px solid var(--border);border-radius:26px;overflow:hidden;box-shadow:0 26px 70px rgba(5,59,39,.09)}
-.header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 32px;border-bottom:1px solid var(--border);background:#fff}
-.brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:var(--forest);min-width:0}
-.brand img{width:86px;height:86px;object-fit:contain;border-radius:12px;border:1px solid #edf1ec;background:#fff;flex:none}
-.brand-copy strong{display:block;font-size:17px;font-weight:900;line-height:1.2;letter-spacing:.02em}
-.brand-copy small{display:block;font-size:12px;font-weight:750;color:var(--gold);margin-top:3px;letter-spacing:.04em}
-.language-control{display:flex;flex-direction:column;gap:6px;align-items:flex-end}
-.language-title{font-weight:700;font-size:12px;color:var(--muted)}
-.languages{display:flex;align-items:center;gap:4px;background:#f5faf6;border:1px solid var(--border);padding:5px;border-radius:15px}
-.languages button{border:0;background:transparent;padding:10px 13px;border-radius:11px;min-height:46px;font-size:14px;font-weight:750;color:#365d4d;white-space:nowrap}
-.languages button[aria-pressed="true"]{background:var(--forest);color:#fff;box-shadow:0 3px 10px #0b4b361e}
-.hero{display:grid;grid-template-columns:1.25fr .75fr;align-items:center;min-height:360px;background:radial-gradient(circle at 85% 16%,#e2f2e7 0%,transparent 37%),linear-gradient(130deg,#fff,#fcfdf8);border-bottom:1px solid var(--border)}
-.hero-copy{padding:34px 36px 36px}
-.pretitle{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border-radius:50px;background:#e5f5ec;color:#176444;font-size:13px;font-weight:850;margin-bottom:19px}
-.pretitle:before{content:"";width:8px;height:8px;background:#2ab478;border-radius:100%;box-shadow:0 0 0 4px #c8ead8}
-h1{font-size:clamp(35px,4.3vw,58px);line-height:1.06;letter-spacing:-.045em;margin:0;font-weight:900;color:var(--deep)}
-.subtitle{margin:12px 0 0;color:var(--muted);font-size:18px;max-width:530px;line-height:1.5}
-.facts{display:flex;flex-wrap:wrap;gap:11px;margin:23px 0 25px}
-.fact{display:flex;align-items:center;gap:9px;border-radius:12px;padding:10px 14px;font-size:15px;font-weight:850;background:#fff;border:1px solid #d8e7dc;box-shadow:0 3px 9px #153d2910}
-.fact.salary{color:#72521b;background:#fff7df;border-color:#f0dfa9}
-.primary-button,.secondary-wa{display:inline-flex;align-items:center;justify-content:center;gap:12px;text-align:center;text-decoration:none;border-radius:15px;color:#fff;background:linear-gradient(120deg,#25b967,#148648);font-weight:900;box-shadow:0 10px 22px #168d4c2d;min-height:63px;padding:14px 22px;font-size:18px;max-width:100%}
-.primary-button:hover,.secondary-wa:hover{background:linear-gradient(120deg,#29c66d,#0e6e3c)}
-.primary-button svg,.secondary-wa svg{width:25px;height:25px;flex:none}
-.phone{font-size:14px;color:#536f61;font-weight:800;margin:11px 0 0}
-.hero-logo{padding:22px 34px 22px 10px;display:flex;align-items:center;justify-content:center}
-.hero-logo img{width:min(100%,305px);height:auto;object-fit:contain;filter:drop-shadow(0 12px 18px #0b4a3611)}
-.video-section{padding:28px 34px 20px;background:#fff}
-.video-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:15px}
-.video-head h2{font-size:22px;line-height:1.25;margin:0;letter-spacing:-.02em;color:var(--forest)}
-.video-head p{font-size:13px;color:var(--muted);margin:4px 0 0}
-.sound-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid #cdded3;color:#0e5d41;background:#f3faf6;border-radius:10px;padding:12px 14px;font-size:14px;font-weight:800;min-height:48px;white-space:nowrap}
-.video-frame{aspect-ratio:16/9;overflow:hidden;background:#041d16;border-radius:19px;position:relative;box-shadow:0 12px 32px #0b3e3221}
-.video-frame video{width:100%;height:100%;object-fit:contain;background:#041d16}
-.video-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 0 6px}
-.video-bottom p{margin:0;font-size:14px;color:var(--muted);max-width:570px;line-height:1.5}
-.secondary-wa{font-size:16px;min-height:55px;padding:12px 22px;flex:none}
-.footer{border-top:1px solid var(--border);background:#fbfdfb;padding:18px 30px;color:var(--muted);font-size:12px;line-height:1.55;text-align:center}
-@media(max-width:980px){.header{align-items:flex-start;flex-direction:column}.language-control{align-items:flex-start;width:100%}.hero{grid-template-columns:1.35fr .65fr}.hero-logo img{width:220px}.languages{max-width:100%;overflow:auto}}
-@media(max-width:700px){.shell{border-radius:0;margin:0;border:0;box-shadow:none}.header{padding:14px 16px;gap:14px}.brand img{width:65px;height:65px}.brand-copy strong{font-size:14px}.brand-copy small{font-size:9px;letter-spacing:.03em}.language-control{gap:8px}.languages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;overflow:visible}.languages button{min-width:0;padding:10px 4px;min-height:50px;font-size:13px}.hero{grid-template-columns:1fr}.hero-logo{display:none}.hero-copy{padding:26px 18px 30px}.pretitle{font-size:12px;margin-bottom:15px}h1{font-size:clamp(34px,8vw,47px)}.subtitle{font-size:16px}.facts{margin:18px 0 23px;gap:9px}.fact{padding:10px 11px;font-size:13px}.primary-button{display:flex;width:100%;font-size:17px;min-height:65px}.phone{text-align:center}.video-section{padding:22px 12px 18px}.video-head{align-items:flex-start;flex-direction:column;gap:11px;padding:0 5px}.video-head h2{font-size:20px}.sound-btn{min-height:44px}.video-frame{border-radius:12px}.video-bottom{flex-direction:column;align-items:stretch;gap:15px;padding:16px 5px 2px}.video-bottom p{font-size:13px}.secondary-wa{width:100%;font-size:17px;min-height:60px}.footer{padding:16px 19px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.primary-button,.secondary-wa{transition:none}}
-
-/* Compact hero video replaces the old large logo. */
-.hero{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);min-height:365px}
-.hero-media{min-width:0;padding:26px 32px 26px 6px;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.compact-video-frame{width:100%;max-width:390px;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#06271e;box-shadow:0 15px 35px rgba(9,56,39,.17);border:1px solid #c8dfd2}
-.compact-video-frame video{display:block;width:100%;height:100%;object-fit:contain;background:#06271e}
-.under-video{display:flex;align-items:center;justify-content:space-between;gap:9px;width:100%;max-width:390px;padding-top:10px}
-.video-caption{font-size:12px;color:#597567;font-weight:700;line-height:1.3}
-.under-video .sound-btn{padding:8px 10px;font-size:12px;min-height:38px;border-radius:10px;box-shadow:none}
-@media (max-width:980px){.hero{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}.hero-media{padding:20px 18px 20px 0}}
-@media (max-width:700px){.hero{grid-template-columns:1fr}.hero-copy{padding-bottom:14px}.hero-media{padding:6px 18px 26px}.compact-video-frame{max-width:420px}.under-video{max-width:420px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#073F30">
+  <title>ओमानमा घरेलु काम | GulfPath Overseas</title>
+  <meta name="description" content="ओमानमा घरेलु काम, खाडी मुलुकमा रोजगारी र उम्मेदवार सिफारिसबारे GulfPath Overseas बाट जानकारी लिनुहोस्। कामका सर्तहरू इजाजतपत्र प्राप्त एजेन्सीसँग पुष्टि गर्नुहोस्।">
+  <link rel="canonical" href="https://gulfpathoverseas.online/">
+  <link rel="icon" href="favicon.png" type="image/png" sizes="64x64">
+  <meta property="og:title" content="GulfPath Overseas | Household Work in Oman">
+  <meta property="og:description" content="GulfPath Overseas provides Gulf employment information and candidate referrals. Ask about household work in Oman and verify terms with a licensed agency.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gulfpathoverseas.online/">
+  <meta property="og:site_name" content="GulfPath Overseas">
+  <meta property="og:image" content="https://gulfpathoverseas.online/social-preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="GulfPath Overseas logo and Your Pathway to Gulf Careers tagline">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GulfPath Overseas | Household Work in Oman">
+  <meta name="twitter:description" content="GulfPath Overseas provides Gulf employment information and candidate referrals. Ask about household work in Oman and verify terms with a licensed agency.">
+  <meta name="twitter:image" content="https://gulfpathoverseas.online/social-preview.jpg">
+  <meta name="twitter:image:alt" content="GulfPath Overseas logo and Your Pathway to Gulf Careers tagline">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "GulfPath Overseas", "url": "https://gulfpathoverseas.online/", "inLanguage": ["ne", "en", "ta", "si", "hi"], "publisher": {"@type": "Organization", "name": "GulfPath Overseas", "url": "https://gulfpathoverseas.online/", "logo": "https://gulfpathoverseas.online/logo.webp", "contactPoint": {"@type": "ContactPoint", "telephone": "+96875253754", "contactType": "enquiries"}}}</script>
+  <link rel="stylesheet" href="site.css">
+  <script defer src="translations.js"></script>
+  <script defer src="site.js"></script>
 </head>
-<body>
-<main class="shell">
-<header class="header">
-<div class="brand">
-<img alt="GulfPath Overseas logo" height="86" src="logo.webp" width="86"/>
-<span class="brand-copy"><strong>GULFPATH OVERSEAS</strong><small>YOUR PATHWAY TO GULF CAREERS</small></span>
-</div>
-<div class="language-control">
-<span class="language-title" id="chooseLabel">आफ्नो भाषा छान्नुहोस्</span>
-<nav aria-label="Language selection" class="languages">
-<button aria-pressed="false" data-lang="en" type="button">English</button>
-<button aria-pressed="false" data-lang="ta" type="button">தமிழ்</button>
-<button aria-pressed="true" data-lang="ne" type="button">नेपाली</button>
-<button aria-pressed="false" data-lang="si" type="button">සිංහල</button>
-<button aria-pressed="false" data-lang="hi" type="button">हिन्दी</button>
-</nav>
-</div>
-</header>
-<section class="hero">
-<div class="hero-copy">
-<div class="pretitle" id="eyebrow">वैदेशिक रोजगारी सम्बन्धी जानकारी</div>
-<h1 id="headline">ओमानमा घरेलु काम</h1>
-<p class="subtitle" id="subtitle">ओमानमा घरेलु काम र हाउसमेड कामका अवसरबारे जानकारी लिनुहोस्।</p>
-<div class="facts">
-<span class="fact" id="country">🇴🇲 गन्तव्य देश: ओमान</span>
-<span class="fact salary" id="salary">✦ उच्च तलब</span>
-</div>
-<a aria-label="व्हाट्सएपमा सम्पर्क गर्नुहोस्" class="primary-button whatsapp" href="https://wa.me/96875253754" rel="noopener noreferrer" target="_blank">
-<svg aria-hidden="true" fill="currentColor" viewbox="0 0 32 32"><path d="M16.04 2.5A13.43 13.43 0 0 0 4.59 22.9L2.5 29.5l6.78-2.04A13.46 13.46 0 1 0 16.04 2.5Zm0 24.5a11.06 11.06 0 0 1-5.65-1.55l-.4-.24-3.97 1.2 1.23-3.87-.26-.42A11.05 11.05 0 1 1 16.04 27Zm6.1-8.26c-.34-.17-1.99-.98-2.3-1.1-.3-.12-.53-.17-.75.17s-.87 1.1-1.07 1.33-.39.25-.72.08c-.34-.17-1.42-.52-2.7-1.68-.99-.88-1.65-1.98-1.85-2.32s-.02-.52.15-.69c.15-.15.34-.39.51-.59.17-.2.22-.34.34-.56s.06-.43-.03-.6c-.08-.17-.75-1.82-1.03-2.5-.27-.65-.54-.57-.75-.58h-.63c-.22 0-.59.08-.9.43-.3.34-1.18 1.15-1.18 2.8s1.21 3.25 1.38 3.47 2.37 3.62 5.74 5.07c.8.34 1.42.54 1.9.69.8.25 1.52.21 2.09.13.64-.1 1.99-.81 2.27-1.59.28-.79.28-1.46.2-1.59-.09-.14-.31-.22-.65-.39Z"></path></svg>
-<span class="whatsapp-text">व्हाट्सएपमा सम्पर्क गर्नुहोस्</span>
-</a>
-<p class="phone">+968 7525 3754</p>
-</div>
-<aside aria-label="GulfPath Overseas information video" class="hero-media">
-<div class="compact-video-frame">
-<video aria-label="30-second GulfPath Overseas information video" autoplay="" controlslist="nofullscreen nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" id="promoVideo" loop="" muted="" playsinline="" poster="poster.jpg" preload="metadata" webkit-playsinline="">
-<source src="oman-video.mp4" type="video/mp4"/>
-      Your browser does not support this video.
-    </video>
-</div>
-<div class="under-video">
-<span class="video-caption" id="videoTitle">३० सेकेन्डको भिडियो • स्वतः चलिरहेको छ</span>
-<button aria-pressed="false" class="sound-btn" id="soundButton" type="button">
-<span aria-hidden="true" id="soundIcon">♪</span><span id="soundText">आवाज खोल्नुहोस्</span>
-</button>
-</div>
-</aside>
-</section>
-
-<footer class="footer" id="footerText">यो पृष्ठ जानकारी र सम्पर्कका लागि मात्र हो। रोजगारी तथा करारका सर्तहरू इजाजतपत्र प्राप्त एजेन्सीसँग पुष्टि गर्नुहोस्।</footer>
-</main>
-<script>
-const PHONE='96875253754';
-const COPY={
- en:{choose:'Choose your language',eyebrow:'Overseas work information',headline:'Household work in Oman',subtitle:'Learn about housemaid and household work opportunities in Oman.',country:'🇴🇲 Destination: Oman',salary:'✦ High salary',whatsapp:'Contact on WhatsApp',videoTitle:'30-second video • Automatically playing',videoHint:'Tap play to watch. Turn sound on to hear the music.',soundOn:'Turn sound on',soundOff:'Mute video',ask:'Ask on WhatsApp',terms:'Salary and work conditions depend on the approved job offer. Confirm exact terms with the responsible licensed agency.',footer:'Information and enquiries only. Recruitment and contract terms must be confirmed through the responsible licensed agency.',message:'Hello, I would like more information about household work in Oman and the salary.'},
- ta:{choose:'உங்கள் மொழியைத் தேர்ந்தெடுக்கவும்',eyebrow:'வெளிநாட்டு வேலை பற்றிய தகவல்',headline:'ஓமானில் வீட்டு வேலை',subtitle:'ஓமானில் வீட்டு வேலை மற்றும் ஹவுஸ்மெய்ட் வேலை வாய்ப்புகள் பற்றித் தெரிந்துகொள்ளுங்கள்.',country:'🇴🇲 வேலை செய்யும் நாடு: ஓமான்',salary:'✦ அதிக சம்பளம்',whatsapp:'வாட்ஸ்அப்பில் தொடர்பு கொள்ளுங்கள்',videoTitle:'30 விநாடி வீடியோ • தானாக இயங்குகிறது',videoHint:'வீடியோவைப் பார்க்க Play அழுத்துங்கள். ஒலியை இயக்கலாம்.',soundOn:'ஒலியை இயக்கவும்',soundOff:'ஒலியை நிறுத்தவும்',ask:'வாட்ஸ்அப்பில் கேளுங்கள்',terms:'சம்பளமும் பணிநிபந்தனைகளும் அங்கீகரிக்கப்பட்ட வேலை வாய்ப்பைப் பொறுத்து மாறும். சரியான விவரங்களை உரிமம் பெற்ற நிறுவனத்திடம் உறுதிப்படுத்துங்கள்.',footer:'இது தகவல் மற்றும் தொடர்புக்காக மட்டும். வேலை மற்றும் ஒப்பந்த விவரங்களை உரிமம் பெற்ற நிறுவனத்திடம் உறுதிப்படுத்தவும்.',message:'வணக்கம், ஓமானில் வீட்டு வேலை மற்றும் சம்பளம் பற்றிய கூடுதல் தகவல் வேண்டும்.'},
- ne:{choose:'आफ्नो भाषा छान्नुहोस्',eyebrow:'वैदेशिक रोजगारी सम्बन्धी जानकारी',headline:'ओमानमा घरेलु काम',subtitle:'ओमानमा घरेलु काम र हाउसमेड कामका अवसरबारे जानकारी लिनुहोस्।',country:'🇴🇲 गन्तव्य देश: ओमान',salary:'✦ उच्च तलब',whatsapp:'व्हाट्सएपमा सम्पर्क गर्नुहोस्',videoTitle:'३० सेकेन्डको भिडियो • स्वतः चलिरहेको छ',videoHint:'भिडियो हेर्न प्ले थिच्नुहोस्। आवाज खोल्न सक्नुहुन्छ।',soundOn:'आवाज खोल्नुहोस्',soundOff:'आवाज बन्द गर्नुहोस्',ask:'व्हाट्सएपमा सोध्नुहोस्',terms:'तलब र कामका सर्तहरू स्वीकृत रोजगारीको प्रस्तावअनुसार फरक हुन सक्छन्। यथार्थ विवरण इजाजतपत्र प्राप्त एजेन्सीसँग पुष्टि गर्नुहोस्।',footer:'यो पृष्ठ जानकारी र सम्पर्कका लागि मात्र हो। रोजगारी तथा करारका सर्तहरू इजाजतपत्र प्राप्त एजेन्सीसँग पुष्टि गर्नुहोस्।',message:'नमस्ते, मलाई ओमानमा घरेलु काम र तलबबारे थप जानकारी चाहिन्छ।'},
- si:{choose:'ඔබේ භාෂාව තෝරන්න',eyebrow:'විදේශ රැකියා තොරතුරු',headline:'ඕමානයේ ගෘහ සේවා රැකියා',subtitle:'ඕමානයේ ගෘහ සේවා සහ ගෘහ සේවිකා රැකියා අවස්ථා පිළිබඳ තොරතුරු දැනගන්න.',country:'🇴🇲 රැකියා රට: ඕමානය',salary:'✦ ඉහළ වැටුප්',whatsapp:'WhatsApp හරහා සම්බන්ධ වන්න',videoTitle:'තත්පර 30 වීඩියෝව • ස්වයංක්‍රීයව ධාවනය වේ',videoHint:'වීඩියෝව නැරඹීමට Play ඔබන්න. ශබ්දය ක්‍රියාත්මක කළ හැක.',soundOn:'ශබ්දය සක්‍රිය කරන්න',soundOff:'ශබ්දය නිහඬ කරන්න',ask:'WhatsApp හරහා විමසන්න',terms:'වැටුප සහ සේවා කොන්දේසි අනුමත රැකියා යෝජනාව අනුව වෙනස් විය හැක. නිවැරදි විස්තර බලපත්‍රලාභී නියෝජිත ආයතනයෙන් තහවුරු කරගන්න.',footer:'මෙය තොරතුරු සහ විමසීම් සඳහා පමණි. බඳවාගැනීම් හා ගිවිසුම් කොන්දේසි බලපත්‍රලාභී නියෝජිත ආයතනයෙන් තහවුරු කරගන්න.',message:'ආයුබෝවන්, ඕමානයේ ගෘහ සේවා රැකියා සහ වැටුප පිළිබඳ වැඩි විස්තර අවශ්‍යයි.'},
- hi:{choose:'अपनी भाषा चुनें',eyebrow:'विदेश में नौकरी की जानकारी',headline:'ओमान में घरेलू काम',subtitle:'ओमान में घरेलू काम और हाउसमेड नौकरी के अवसरों के बारे में जानें।',country:'🇴🇲 गंतव्य देश: ओमान',salary:'✦ उच्च वेतन',whatsapp:'व्हाट्सऐप पर संपर्क करें',videoTitle:'30 सेकंड का वीडियो • अपने आप चल रहा है',videoHint:'वीडियो देखने के लिए प्ले दबाएँ। आवाज़ चालू कर सकते हैं।',soundOn:'आवाज़ चालू करें',soundOff:'आवाज़ बंद करें',ask:'व्हाट्सऐप पर पूछें',terms:'वेतन और काम की शर्तें स्वीकृत नौकरी के प्रस्ताव के अनुसार बदल सकती हैं। सही जानकारी लाइसेंस प्राप्त एजेंसी से पक्की करें।',footer:'यह पेज केवल जानकारी और संपर्क के लिए है। भर्ती और अनुबंध की शर्तें लाइसेंस प्राप्त एजेंसी से पक्की करें।',message:'नमस्ते, मुझे ओमान में घरेलू काम और वेतन के बारे में अधिक जानकारी चाहिए।'}
-};
-const video=document.getElementById('promoVideo');
-const soundButton=document.getElementById('soundButton');
-let active='en';
-function render(lang){
- const data=COPY[lang]||COPY.en;
- active=lang;
- document.documentElement.lang=lang;
- for(const id of ['choose','eyebrow','headline','subtitle','country','salary','videoTitle','videoHint','terms','footer']){
-  const element=document.getElementById(id==='choose'?'chooseLabel':id==='footer'?'footerText':id);
-  if(element)element.textContent=data[id];
- }
- document.getElementById('soundText').textContent=video.muted?data.soundOn:data.soundOff;
- document.querySelectorAll('.whatsapp-text').forEach((element,index)=>element.textContent=index===0?data.whatsapp:data.ask);
- document.querySelectorAll('.whatsapp').forEach(element=>{
-  element.href='https://wa.me/'+PHONE+'?text='+encodeURIComponent(data.message);
-  element.setAttribute('aria-label',data.whatsapp);
- });
- document.querySelectorAll('[data-lang]').forEach(element=>element.setAttribute('aria-pressed',String(element.dataset.lang===lang)));
-}
-soundButton.addEventListener('click',()=>{
- video.muted=!video.muted;
- document.getElementById('soundText').textContent=video.muted?COPY[active].soundOn:COPY[active].soundOff;
- document.getElementById('soundIcon').textContent=video.muted?'♪':'♫';
- soundButton.setAttribute('aria-pressed',String(!video.muted));
- if(video.paused)video.play().catch(()=>{});
-});
-video.addEventListener('volumechange',()=>{
- document.getElementById('soundText').textContent=video.muted?COPY[active].soundOn:COPY[active].soundOff;
- soundButton.setAttribute('aria-pressed',String(!video.muted));
-});
-document.querySelectorAll('[data-lang]').forEach(btn=>btn.addEventListener('click',()=>render(btn.dataset.lang)));
-render('ne');
-</script>
+<body data-page="home">
+  <a class="skip" href="#main"><span data-copy="skip">मुख्य सामग्रीमा जानुहोस्</span></a>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="#home" data-language-link>
+        <img src="logo.webp" width="64" height="64" alt="GulfPath Overseas" lang="en" decoding="async">
+        <span lang="en"><strong>GulfPath Overseas</strong><small>Your Pathway to Gulf Careers</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="GulfPath Overseas"><a href="#home" data-route="home" data-language-link><span data-copy="home">गृहपृष्ठ</span></a><a href="#about" data-route="about" data-language-link><span data-copy="about">हाम्रो भूमिका</span></a><a href="privacy.html" data-route="privacy" data-language-link><span data-copy="privacy">गोपनीयता नीति</span></a><a href="#contact" data-route="contact" data-language-link><span data-copy="contact">सम्पर्क</span></a></nav>
+    </div>
+    <div class="locale-bar">
+      <div class="wrap locale-row">
+        <span data-copy="choose" id="language-label">आफ्नो भाषा छान्नुहोस्</span>
+        <div class="languages" role="group" aria-labelledby="language-label"><button type="button" data-lang="en" lang="en" aria-pressed="false">English</button><button type="button" data-lang="ta" lang="ta" aria-pressed="false">தமிழ்</button><button type="button" data-lang="ne" lang="ne" aria-pressed="true">नेपाली</button><button type="button" data-lang="si" lang="si" aria-pressed="false">සිංහල</button><button type="button" data-lang="hi" lang="hi" aria-pressed="false">हिन्दी</button></div>
+      </div>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+      <section class="hero" id="home" aria-labelledby="headline">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p data-copy="eyebrow" class="eyebrow">खाडी मुलुकमा रोजगारीसम्बन्धी जानकारी</p>
+            <h1 data-copy="headline" id="headline">ओमानमा घरेलु काम</h1>
+            <p data-copy="subtitle" class="intro">ओमानमा घरेलु काम र हाउसमेड कामका अवसरबारे जानकारी लिनुहोस्।</p>
+            <p data-copy="country" class="destination">गन्तव्य देश: ओमान</p>
+            <a class="cta" data-wa="message" href="https://wa.me/96875253754?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%2C%20%E0%A4%AE%E0%A4%B2%E0%A4%BE%E0%A4%88%20%E0%A4%93%E0%A4%AE%E0%A4%BE%E0%A4%A8%E0%A4%AE%E0%A4%BE%20%E0%A4%98%E0%A4%B0%E0%A5%87%E0%A4%B2%E0%A5%81%20%E0%A4%95%E0%A4%BE%E0%A4%AE%20%E0%A4%B0%20%E0%A4%A4%E0%A4%B2%E0%A4%AC%E0%A4%AC%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%A5%E0%A4%AA%20%E0%A4%9C%E0%A4%BE%E0%A4%A8%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%80%20%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%BF%E0%A4%A8%E0%A5%8D%E0%A4%9B%E0%A5%A4" target="_blank" rel="noopener noreferrer" aria-label="व्हाट्सएपमा सम्पर्क गर्नुहोस्"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 32 32"><path d="M16.04 2.5A13.43 13.43 0 0 0 4.59 22.9L2.5 29.5l6.78-2.04A13.46 13.46 0 1 0 16.04 2.5Zm0 24.5a11.06 11.06 0 0 1-5.65-1.55l-.4-.24-3.97 1.2 1.23-3.87-.26-.42A11.05 11.05 0 1 1 16.04 27Zm6.1-8.26c-.34-.17-1.99-.98-2.3-1.1-.3-.12-.53-.17-.75.17s-.87 1.1-1.07 1.33-.39.25-.72.08c-.34-.17-1.42-.52-2.7-1.68-.99-.88-1.65-1.98-1.85-2.32s-.02-.52.15-.69c.15-.15.34-.39.51-.59.17-.2.22-.34.34-.56s.06-.43-.03-.6c-.08-.17-.75-1.82-1.03-2.5-.27-.65-.54-.57-.75-.58h-.63c-.22 0-.59.08-.9.43-.3.34-1.18 1.15-1.18 2.8s1.21 3.25 1.38 3.47 2.37 3.62 5.74 5.07c.8.34 1.42.54 1.9.69.8.25 1.52.21 2.09.13.64-.1 1.99-.81 2.27-1.59.28-.79.28-1.46.2-1.59-.09-.14-.31-.22-.65-.39Z"></path></svg><span data-copy="whatsapp">व्हाट्सएपमा सम्पर्क गर्नुहोस्</span></a>
+            <p class="phone" dir="ltr">+968 7525 3754</p>
+          </div>
+          <figure class="hero-media">
+            <div class="video-frame">
+              <video id="promo" aria-labelledby="video-caption" controls controlslist="nofullscreen nodownload noremoteplayback" autoplay muted loop playsinline preload="metadata" poster="poster.jpg" disablepictureinpicture disableremoteplayback>
+                <source src="oman-video.mp4" type="video/mp4">
+                <a href="oman-video.mp4"><span data-copy="videoFallback">जानकारीमूलक भिडियो डाउनलोड गर्नुहोस्</span></a>
+              </video>
+            </div>
+            <figcaption data-copy="videoTitle" id="video-caption">३० सेकेन्डको जानकारीमूलक भिडियो</figcaption>
+            <div class="video-controls" hidden role="group" data-copy-aria="playback" aria-label="भिडियो नियन्त्रण">
+              <button type="button" id="play-toggle"><span data-copy="pause">भिडियो रोक्नुहोस्</span></button>
+              <button type="button" id="sound-toggle" aria-pressed="false"><span data-copy="soundOn">आवाज खोल्नुहोस्</span></button>
+            </div>
+          </figure>
+        </div>
+      </section>
+      <section class="wrap trust section-space" id="about" aria-labelledby="trust-title">
+        <p data-copy="about" class="eyebrow">हाम्रो भूमिका</p>
+        <h2 data-copy="trustTitle" id="trust-title">सोधपुछ र सिफारिस कसरी हुन्छ</h2>
+        <div class="trust-grid"><article class="trust-card"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a7 7 0 0 1-7 7H9l-5 3v-5a7 7 0 0 1-1-5 7 7 0 0 1 7-7h3a7 7 0 0 1 7 7z M8 11h7"/></svg><h3 data-copy="role">जानकारी र सिफारिस</h3><p data-copy="roleCopy">GulfPath Overseas ले वैदेशिक रोजगारीसम्बन्धी जानकारी दिन्छ, सोधपुछको प्रक्रिया बुझाउँछ र इच्छुक उम्मेदवारलाई सिफारिस गर्न सक्छ।</p></article>
+<article class="trust-card"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z M9 12l2 2 4-4"/></svg><h3 data-copy="agency">इजाजतपत्र प्राप्त एजेन्सीमार्फत भर्ती</h3><p data-copy="agencyCopy">सम्बन्धित इजाजतपत्र प्राप्त रोजगार एजेन्सीले भर्ती प्रक्रिया चलाउँछ। अघि बढ्नुअघि एजेन्सीको नाम माग्नुहोस् र इजाजतपत्र जाँच्नुहोस्।</p></article>
+<article class="trust-card"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V21h-6v-7H9v7H3z"/></svg><h3 data-copy="conditions">लिखित सर्तहरू पुष्टि गर्नुहोस्</h3><p data-copy="conditionsCopy">रोजगारदाताको विवरण र लिखित सर्तहरू माग्नुहोस्। स्वीकार गर्नुअघि जिम्मेवारी, कामको समय, तलब र कटौतीबारे एजेन्सीसँग पुष्टि गर्नुहोस्।</p></article>
+<article class="trust-card"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11h12a2 2 0 0 1 2 2v7H4v-7a2 2 0 0 1 2-2z M8 11V7a4 4 0 1 1 8 0v4 M12 15v2"/></svg><h3 data-copy="expectations">गोपनीयता र अपेक्षा</h3><p data-copy="expectationsCopy">सोधपुछका लागि आवश्यक जानकारी मात्र दिनुहोस्। रोजगारी, भिसा स्वीकृति वा तलबको ग्यारेन्टी छैन।</p></article></div>
+      </section>
+      <section class="wrap section-space contact-wrap" id="contact" aria-labelledby="contact-title">
+        <div class="contact-panel">
+          <div><h2 data-copy="contactTitle" id="contact-title">ओमानमा घरेलु कामबारे सोध्नुहोस्</h2><p data-copy="contactCopy">ह्वाट्सएपमा सन्देश पठाउनुहोस्। आवेदन दिनुअघि प्रक्रिया र जाँच गर्नुपर्ने कुराबारे सोध्न सक्नुहुन्छ।</p></div>
+          <div class="contact-action"><a class="cta" data-wa="message" href="https://wa.me/96875253754?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%2C%20%E0%A4%AE%E0%A4%B2%E0%A4%BE%E0%A4%88%20%E0%A4%93%E0%A4%AE%E0%A4%BE%E0%A4%A8%E0%A4%AE%E0%A4%BE%20%E0%A4%98%E0%A4%B0%E0%A5%87%E0%A4%B2%E0%A5%81%20%E0%A4%95%E0%A4%BE%E0%A4%AE%20%E0%A4%B0%20%E0%A4%A4%E0%A4%B2%E0%A4%AC%E0%A4%AC%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%A5%E0%A4%AA%20%E0%A4%9C%E0%A4%BE%E0%A4%A8%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%80%20%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%BF%E0%A4%A8%E0%A5%8D%E0%A4%9B%E0%A5%A4" target="_blank" rel="noopener noreferrer" aria-label="व्हाट्सएपमा सम्पर्क गर्नुहोस्"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 32 32"><path d="M16.04 2.5A13.43 13.43 0 0 0 4.59 22.9L2.5 29.5l6.78-2.04A13.46 13.46 0 1 0 16.04 2.5Zm0 24.5a11.06 11.06 0 0 1-5.65-1.55l-.4-.24-3.97 1.2 1.23-3.87-.26-.42A11.05 11.05 0 1 1 16.04 27Zm6.1-8.26c-.34-.17-1.99-.98-2.3-1.1-.3-.12-.53-.17-.75.17s-.87 1.1-1.07 1.33-.39.25-.72.08c-.34-.17-1.42-.52-2.7-1.68-.99-.88-1.65-1.98-1.85-2.32s-.02-.52.15-.69c.15-.15.34-.39.51-.59.17-.2.22-.34.34-.56s.06-.43-.03-.6c-.08-.17-.75-1.82-1.03-2.5-.27-.65-.54-.57-.75-.58h-.63c-.22 0-.59.08-.9.43-.3.34-1.18 1.15-1.18 2.8s1.21 3.25 1.38 3.47 2.37 3.62 5.74 5.07c.8.34 1.42.54 1.9.69.8.25 1.52.21 2.09.13.64-.1 1.99-.81 2.27-1.59.28-.79.28-1.46.2-1.59-.09-.14-.31-.22-.65-.39Z"></path></svg><span data-copy="whatsapp">व्हाट्सएपमा सम्पर्क गर्नुहोस्</span></a><p class="phone" dir="ltr">+968 7525 3754</p></div>
+        </div>
+      </section>
+    </main>
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <div><strong lang="en">GulfPath Overseas</strong><p data-copy="footer">यो पृष्ठ जानकारी र सम्पर्कका लागि मात्र हो। रोजगारी तथा करारका सर्तहरू इजाजतपत्र प्राप्त एजेन्सीसँग पुष्टि गर्नुहोस्।</p></div>
+      <a href="privacy.html" data-route="privacy" data-language-link><span data-copy="privacy">गोपनीयता नीति</span></a>
+    </div>
+  </footer>
+  <nav class="mobile-nav" aria-label="GulfPath Overseas"><a href="#home" data-route="home" data-language-link><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V21h-6v-7H9v7H3z"/></svg><span data-copy="home">गृहपृष्ठ</span></a><a href="#about" data-route="about" data-language-link><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z M9 12l2 2 4-4"/></svg><span data-copy="aboutNav">हाम्रो भूमिका</span></a><a href="privacy.html" data-route="privacy" data-language-link><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11h12a2 2 0 0 1 2 2v7H4v-7a2 2 0 0 1 2-2z M8 11V7a4 4 0 1 1 8 0v4 M12 15v2"/></svg><span data-copy="privacyNav">गोपनीयता</span></a><a href="#contact" data-route="contact" data-language-link><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a7 7 0 0 1-7 7H9l-5 3v-5a7 7 0 0 1-1-5 7 7 0 0 1 7-7h3a7 7 0 0 1 7 7z M8 11h7"/></svg><span data-copy="contactNav">सम्पर्क</span></a></nav>
+  <div class="floating-rail"><a class="floating-wa" data-wa="message" href="https://wa.me/96875253754?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%2C%20%E0%A4%AE%E0%A4%B2%E0%A4%BE%E0%A4%88%20%E0%A4%93%E0%A4%AE%E0%A4%BE%E0%A4%A8%E0%A4%AE%E0%A4%BE%20%E0%A4%98%E0%A4%B0%E0%A5%87%E0%A4%B2%E0%A5%81%20%E0%A4%95%E0%A4%BE%E0%A4%AE%20%E0%A4%B0%20%E0%A4%A4%E0%A4%B2%E0%A4%AC%E0%A4%AC%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%A5%E0%A4%AA%20%E0%A4%9C%E0%A4%BE%E0%A4%A8%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%80%20%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%BF%E0%A4%A8%E0%A5%8D%E0%A4%9B%E0%A5%A4" target="_blank" rel="noopener noreferrer" aria-label="व्हाट्सएपमा सम्पर्क गर्नुहोस्"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 32 32"><path d="M16.04 2.5A13.43 13.43 0 0 0 4.59 22.9L2.5 29.5l6.78-2.04A13.46 13.46 0 1 0 16.04 2.5Zm0 24.5a11.06 11.06 0 0 1-5.65-1.55l-.4-.24-3.97 1.2 1.23-3.87-.26-.42A11.05 11.05 0 1 1 16.04 27Zm6.1-8.26c-.34-.17-1.99-.98-2.3-1.1-.3-.12-.53-.17-.75.17s-.87 1.1-1.07 1.33-.39.25-.72.08c-.34-.17-1.42-.52-2.7-1.68-.99-.88-1.65-1.98-1.85-2.32s-.02-.52.15-.69c.15-.15.34-.39.51-.59.17-.2.22-.34.34-.56s.06-.43-.03-.6c-.08-.17-.75-1.82-1.03-2.5-.27-.65-.54-.57-.75-.58h-.63c-.22 0-.59.08-.9.43-.3.34-1.18 1.15-1.18 2.8s1.21 3.25 1.38 3.47 2.37 3.62 5.74 5.07c.8.34 1.42.54 1.9.69.8.25 1.52.21 2.09.13.64-.1 1.99-.81 2.27-1.59.28-.79.28-1.46.2-1.59-.09-.14-.31-.22-.65-.39Z"></path></svg></a></div>
 </body>
 </html>

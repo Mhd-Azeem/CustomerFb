@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gulfpathoverseas.online/sitemap.xml
